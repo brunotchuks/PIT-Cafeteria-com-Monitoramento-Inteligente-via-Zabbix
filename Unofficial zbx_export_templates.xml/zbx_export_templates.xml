@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2022-10-28T18:11:23Z</date>
+    <groups>
+        <group>
+            <name>Templates/Operating systems</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Unofficial Zabbix Agent Android</template>
+            <name>Template Unofficial Zabbix Agent Android</name>
+            <groups>
+                <group>
+                    <name>Templates/Operating systems</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <name>Agent hostname</name>
+                    <key>agent.hostname</key>
+                    <delay>30m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Agent ping</name>
+                    <key>agent.ping</key>
+                    <history>1w</history>
+                    <trends>90d</trends>
+                    <triggers>
+                        <trigger>
+                            <expression>{nodata(10m)}=1</expression>
+                            <name>Zabbix agent on {HOST.NAME} is unreachable for 10 minutes</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Agent version</name>
+                    <key>agent.version</key>
+                    <delay>10m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Manufacturer</name>
+                    <key>android.manufacturer</key>
+                    <delay>30m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Model</name>
+                    <key>android.model</key>
+                    <delay>30m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Location</name>
+                    <key>gps</key>
+                    <delay>30s</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Network carrier</name>
+                    <key>net.carrier</key>
+                    <delay>5m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Connectivity type</name>
+                    <key>net.connectivity</key>
+                    <delay>5m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Roaming status</name>
+                    <key>net.roaming</key>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                </item>
+                <item>
+                    <name>Cellular signal strength</name>
+                    <key>net.signal_strength</key>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                </item>
+                <item>
+                    <name>Wifi BSSID MAC</name>
+                    <key>net.wifi.bssid</key>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Wifi signal strength</name>
+                    <key>net.wifi.signal</key>
+                    <history>7d</history>
+                </item>
+                <item>
+                    <name>Wifi SSID</name>
+                    <key>net.wifi.ssid</key>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Wifi status</name>
+                    <key>net.wifi.status</key>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                </item>
+                <item>
+                    <name>Battery level</name>
+                    <key>power.battery_level</key>
+                    <history>3d</history>
+                    <units>%</units>
+                </item>
+                <item>
+                    <name>Battery temperature</name>
+                    <key>power.battery_temperature</key>
+                    <delay>30s</delay>
+                    <history>3d</history>
+                    <value_type>FLOAT</value_type>
+                    <units>°C</units>
+                </item>
+                <item>
+                    <name>Device interactive status</name>
+                    <key>power.is_interactive</key>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Power source</name>
+                    <key>power.source</key>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Power status</name>
+                    <key>power.status</key>
+                    <delay>5m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Sensor light</name>
+                    <key>sensor.light</key>
+                    <history>3d</history>
+                    <units>lux</units>
+                </item>
+                <item>
+                    <name>Sensor proximity</name>
+                    <key>sensor.proximity</key>
+                    <history>3d</history>
+                    <trends>90d</trends>
+                    <units>cm</units>
+                </item>
+                <item>
+                    <name>Sensor temperature</name>
+                    <key>sensor.temperature</key>
+                    <delay>30s</delay>
+                    <history>3d</history>
+                    <units>°C</units>
+                </item>
+                <item>
+                    <name>Hostname</name>
+                    <key>system.hostname</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Local time</name>
+                    <key>system.localtime</key>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                </item>
+                <item>
+                    <name>Sytem architecture</name>
+                    <key>system.sw.arch</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Operating system</name>
+                    <key>system.sw.os</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>Uptime</name>
+                    <key>system.uptime</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <units>s</units>
+                </item>
+                <item>
+                    <name>Memory Free</name>
+                    <key>vm.memory.size[free]</key>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <units>MB</units>
+                </item>
+                <item>
+                    <name>Memory Total</name>
+                    <key>vm.memory.size[total]</key>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <units>MB</units>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Network interface discovery</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>net.if.discovery</key>
+                    <delay>30s</delay>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Incoming network traffic on {#IFNAME}</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>net.if.in[{#IFNAME}]</key>
+                            <delay>30s</delay>
+                            <history>1d</history>
+                            <trends>7d</trends>
+                            <units>Bps</units>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Outgoing network traffic on {#IFNAME}</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>net.if.out[{#IFNAME}]</key>
+                            <delay>30s</delay>
+                            <history>1d</history>
+                            <trends>7d</trends>
+                            <units>Bps</units>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                    </item_prototypes>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Mounted filesystem discovery</name>
+                    <key>vfs.fs.discovery</key>
+                    <delay>1h</delay>
+                    <filter>
+                        <conditions>
+                            <condition>
+                                <macro>{#FSTYPE}</macro>
+                                <value>@File systems for discovery</value>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <lifetime>7d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Free disk space on {#FSNAME} (percentage)</name>
+                            <key>vfs.fs.size[{#FSNAME},pfree]</key>
+                            <history>1w</history>
+                            <trends>90d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>%</units>
+                        </item_prototype>
+                    </item_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+        </template>
+    </templates>
+</zabbix_export>
